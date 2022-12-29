@@ -1,0 +1,2 @@
+class UserGuess < ApplicationRecord
+end
