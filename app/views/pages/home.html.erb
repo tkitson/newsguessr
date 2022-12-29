@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>NewsGuessr</h1>
+<%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg" %>
+
+ <%= simple_form_for @user_guess, url: user_guess_path do |f| %>
+  <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
+  <%= f.button :submit, "Submit guess" %>
+<% end %>
