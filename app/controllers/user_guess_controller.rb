@@ -6,10 +6,12 @@ class UserGuessController < ApplicationController
     @guess = UserGuess.create(guess_params)
     @answer = Answer.last
       if @guess.date == @answer.date
-        redirect_to correct_path
+        result = 'correct'
       else
-        render 'pages/home'
+        result = 'incorrect'
       end
+
+      render json: { result: result }
   end
 
   private
