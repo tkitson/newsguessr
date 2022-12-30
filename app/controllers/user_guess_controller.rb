@@ -7,6 +7,8 @@ class UserGuessController < ApplicationController
     @answer = Answer.last
       if @guess.date == @answer.date
         redirect_to correct_path
+      else
+        render 'pages/home'
       end
   end
 
