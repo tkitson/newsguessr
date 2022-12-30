@@ -1,7 +1,14 @@
-<h1>NewsGuessr</h1>
-<%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg" %>
+<%= javascript_include_tag '/guess' %>
 
- <%= simple_form_for @user_guess, url: user_guess_path do |f| %>
-  <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
-  <%= f.button :submit, "Submit guess" %>
-<% end %>
+<h1>NewsGuessr</h1>
+
+<div class="front-page">
+  <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg" %>
+</div>
+
+<div class="date-form">
+  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post do |f| %>
+    <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
+    <%= f.button :submit, "Submit guess" %>
+  <% end %>
+</div>

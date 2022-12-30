@@ -3,14 +3,20 @@ class UserGuessController < ApplicationController
   end
 
   def create
-    raise
-    @guess = UserGuess.new(guess_params)
+    @guess = UserGuess.create(guess_params)
+    @answer = Answer.last
+      if @guess.date == @answer.date
+        result = 'correct'
+      else
+        result = 'incorrect'
+      end
+
+      render json: { result: result }
   end
 
-  def show
-  end
+  private
 
-  # def guess_params
-  #   params.require(:service).permit(:date)
-  # end
+  def guess_params
+    params.require(:user_guess).permit(:date)
+  end
 end
