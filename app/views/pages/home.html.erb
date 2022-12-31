@@ -1,9 +1,9 @@
-<%= javascript_include_tag '/guess' %>
+<div class="header">
+  <h1>NewsGuessr</h1>
+</div>
 
-<h1>NewsGuessr</h1>
-
-<div class="front-page">
-  <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg" %>
+<div>
+  <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg", class: "front-page-img", data: { onclick: "toggleSize()" } %>
 </div>
 
 <div class="date-form">
