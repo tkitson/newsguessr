@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import CorrectOrNotController from "./correct_or_not_controller"
+application.register("correct-or-not", CorrectOrNotController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

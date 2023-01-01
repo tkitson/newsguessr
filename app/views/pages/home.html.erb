@@ -6,9 +6,14 @@
   <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg", class: "front-page-img", data: { onclick: "toggleSize()" } %>
 </div>
 
+<div data-controller="correct-or-not">
+  <div data-correct-or-not-target="answer">
+  </div>
+
 <div class="date-form">
-  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post do |f| %>
+  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
     <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
     <%= f.button :submit, "Submit guess" %>
   <% end %>
+</div>
 </div>
