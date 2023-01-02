@@ -11,7 +11,18 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault()
-
-    console.log(event)
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result === "correct") {
+        this.answerTarget.innerHTML = "Correct!"
+      } else {
+        this.answerTarget.innerHTML = "Incorrect!"
+      }
+    })
   }
 }
