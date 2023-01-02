@@ -3,15 +3,16 @@ class UserGuessController < ApplicationController
   end
 
   def create
-    @guess = UserGuess.create(guess_params)
-    @answer = Answer.last
-      if @guess.date == @answer.date
-        result = 'correct'
+    @user_guess = UserGuess.new(guess_params)
+    respond_to do |format|
+      if @user_guess.save
+        format.html { redirect_to root_path }
+        format.json { render :create, status: :created }
       else
-        result = 'incorrect'
+        format.html { render :new }
+        format.json
       end
-
-      render json: { result: result }
+    end
   end
 
   private

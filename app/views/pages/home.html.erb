@@ -1,14 +1,18 @@
-<%= javascript_include_tag '/guess' %>
+<div class="container">
+  <div class="header">
+    <h1>NewsGuessr</h1>
+  </div>
 
-<h1>NewsGuessr</h1>
+  <div>
+    <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg", class: "front-page-img", data: { onclick: "toggleSize()" } %>
+  </div>
 
-<div class="front-page">
-  <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg" %>
-</div>
+  <div data-controller="correct-or-not">
+    <h3 class="answer" data-correct-or-not-target="answer">
+    </h3>
 
-<div class="date-form">
-  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post do |f| %>
-    <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
-    <%= f.button :submit, "Submit guess" %>
-  <% end %>
+  <%= render "form", user_guess: @user_guess %>
+
+
+  </div>
 </div>
