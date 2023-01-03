@@ -1,0 +1,16 @@
+.front-page-img {
+  display: flex;
+  margin: 0 auto;
+  height: 60%;
+  width: 25%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.large-image {
+  width: 70%;
+}
+
+.img-hidden {
+  display: none;
+}

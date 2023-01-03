@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="header">
+  <div class="main-title">
     <h1>NewsGuessr</h1>
   </div>
 
-  <div>
-    <%= image_tag "Evening_Standard_Mon__Mar_22__1937_.jpg", class: "front-page-img", data: { onclick: "toggleSize()" } %>
+  <div data-controller="img-zoom">
+    <%= render "carousel" %>
   </div>
 
   <div data-controller="correct-or-not">
