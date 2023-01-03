@@ -2,9 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
-  static targets = ["answer", "form", "two"]
+  static targets = ["answer", "form", "two", "buttons"]
   connect() {
-
   }
 
   send(event) {
@@ -19,8 +18,9 @@ export default class extends Controller {
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
       } else {
-        this.answerTarget.innerHTML = "Incorrect!"
-        this.twoTarget.classList.style.display = "none";
+        this.answerTarget.innerHTML = "Incorrect!";
+        this.twoTarget.classList.remove("img-hidden");
+        this.buttonsTarget.classList.remove("img-hidden");
       }
     })
   }

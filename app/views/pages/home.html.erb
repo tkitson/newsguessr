@@ -3,16 +3,15 @@
     <h1>NewsGuessr</h1>
   </div>
 
-  <div data-controller="img-zoom">
-    <%= render "carousel" %>
-  </div>
-
   <div data-controller="correct-or-not">
-    <h3 class="answer" data-correct-or-not-target="answer">
-    </h3>
+    <div data-controller="img-zoom">
+      <%= render "carousel" %>
+    </div>
+
+      <h3 class="answer" data-correct-or-not-target="answer">
+      </h3>
 
   <%= render "form", user_guess: @user_guess %>
-
 
   </div>
 </div>

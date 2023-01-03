@@ -4,8 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["img"]
   connect() {
-    this.imgTarget.addEventListener("click", () => {
-      this.imgTarget.classList.toggle("large-image")
+    for (let img of this.imgTargets) {
+    img.addEventListener("click", () => {
+      img.classList.toggle("large-image")
     })
+  }
   }
 }
