@@ -2,12 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
-  static targets = ["answer", "form"]
+  static targets = ["answer", "form", "buttons"]
+
   connect() {
-    console.log('hello')
-    console.log('answer', this.answerTarget)
-    console.log('form', this.formTarget)
   }
+
 
   send(event) {
     event.preventDefault()
@@ -21,8 +20,22 @@ export default class extends Controller {
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
       } else {
-        this.answerTarget.innerHTML = "Incorrect!"
+        this.answerTarget.innerHTML = "Incorrect!";
+        this.buttonsTarget.classList.remove("img-hidden");
+        this.nextTarget()
       }
     })
   }
+
+
+    nextTarget() {
+      let i = 0;
+      const PageElement = this.element
+    .getElementsByClassName('pages')
+      let target = PageElement[i];
+      console.log(target);
+    target.classList.remove("img-hidden");
+    i++;
 }
+
+};
