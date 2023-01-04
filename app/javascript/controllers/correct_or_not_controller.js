@@ -3,7 +3,8 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
   static targets = ["answer", "form", "buttons"]
-
+  i = 0;
+  x = 0;
   connect() {
   }
 
@@ -19,23 +20,36 @@ export default class extends Controller {
     .then((data) => {
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
+        this.nextBox(this.answerTarget.innerHTML)
       } else {
         this.answerTarget.innerHTML = "Incorrect!";
         this.buttonsTarget.classList.remove("img-hidden");
-        this.nextTarget()
+        // this.nextPage()
+        this.nextBox(this.answerTarget.innerHTML)
       }
     })
   }
 
-
-    nextTarget() {
-      let i = 0;
+    nextPage() {
       const PageElement = this.element
     .getElementsByClassName('pages')
-      let target = PageElement[i];
-      console.log(target);
+    if (this.x >= PageElement.length) {
+      let target = PageElement[this.x];
     target.classList.remove("img-hidden");
-    i++;
-}
+    this.x++;
+    }
+  }
+
+    nextBox(answer) {
+      const PageElement = this.element
+    .getElementsByClassName('square')
+      let target = PageElement[this.i];
+      if (answer === "Incorrect!") {
+    target.classList.add("red-square");
+  } else if (answer === "Correct!") {
+        target.classList.add("green-square");
+  }
+    this.i++;
+  }
 
 };
