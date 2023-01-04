@@ -1,0 +1,21 @@
+.squares-container {
+  max-width: 17vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.square {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.green-square {
+  background-color: green;
+}
+
+.red-square {
+  background-color: red;
+}
