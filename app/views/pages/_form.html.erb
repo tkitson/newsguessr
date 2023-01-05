@@ -1,6 +1,6 @@
 <div class="date-form">
   <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
-    <%= f.input :date, as: :date, label: "Start Date", include_date: [:day, :month, :year] %>
+    <%= f.input :date, as: :date, label: false, include_date: [:day, :month, :year], start_year: 1800, order: [:day, :month, :year] %>
     <%= f.button :submit, "Submit guess" %>
   <% end %>
 </div>
