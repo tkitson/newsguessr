@@ -24,7 +24,8 @@ export default class extends Controller {
       } else {
         this.answerTarget.innerHTML = "Incorrect!";
         this.buttonsTarget.classList.remove("img-hidden");
-        // this.nextPage()
+        this.nextPage()
+        console.log(this.x)
         this.nextBox(this.answerTarget.innerHTML)
       }
     })
@@ -33,7 +34,7 @@ export default class extends Controller {
     nextPage() {
       const PageElement = this.element
     .getElementsByClassName('pages')
-    if (this.x >= PageElement.length) {
+    if (this.x <= PageElement.length) {
       let target = PageElement[this.x];
     target.classList.remove("img-hidden");
     this.x++;
