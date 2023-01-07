@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
-  static targets = ["answer", "form", "buttons"]
+  static targets = ["answer", "form", "buttons", "next"]
   i = 0;
   x = 0;
   connect() {
@@ -25,7 +25,7 @@ export default class extends Controller {
         this.answerTarget.innerHTML = "Incorrect!";
         this.buttonsTarget.classList.remove("img-hidden");
         this.nextPage()
-        console.log(this.x)
+        this.nextTarget.click()
         this.nextBox(this.answerTarget.innerHTML)
       }
     })
@@ -44,6 +44,7 @@ export default class extends Controller {
     nextBox(answer) {
       const PageElement = this.element
     .getElementsByClassName('square')
+    console.log(PageElement)
       let target = PageElement[this.i];
       if (answer === "Incorrect!") {
     target.classList.add("red-square");
@@ -52,5 +53,6 @@ export default class extends Controller {
   }
     this.i++;
   }
+
 
 };
