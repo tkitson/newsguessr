@@ -1,6 +1,8 @@
 <div class="container">
   <div class="main-title">
     <h1>NewsGuessr</h1>
+    <p>Guess the year of the newspaper! An incorrect answer will reveal another page.</p>
+    <p>Click to zoom!</p>
   </div>
 
   <div data-controller="correct-or-not">
@@ -18,7 +20,7 @@
         <div class="square"></div>
         <div class="square"></div>
       </div>
-  <%= render "form", user_guess: @user_guess %>
+    <%= render "form", user_guess: @user_guess %>
 
   </div>
 </div>

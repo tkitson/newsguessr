@@ -2,16 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Inconsolata", "Helvetica", "sans-serif";
 $headers-font: "Insonsolata", "Helvetica", "sans-serif";
 
 h1, h2, h3, h4, h5 {
-  font-family: "Inconsolata" !important;
+  font-family: "Syne" !important;
   font-weight: 900 !important;
+  color: cornsilk;
 }
 
+p {
+  // font-family: "Karla" !important;
+  font-size: large;
+  color: cornsilk;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
