@@ -1,4 +1,5 @@
-
+ <%
+=begin%>
  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active click-zoom">
@@ -46,13 +47,13 @@
     </button>
   </div>
 </div>
+<%
+=end%>
 
 
-   <div class="click-zoom">
-      <label>
-        <input type="checkbox">
-          <%= image_tag asset_path("1.jpg"), class: "front-page-img", data: { img_zoom_target: "img" } %>
-          <div class="carousel-caption d-none d-md-block">
-          </div>
-      </label>
-    </div>
+
+<%= image_tag asset_path("1.jpg"), class: "front-page-img", id: "myImg", data: { img_zoom_target: "img" } %>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <img class="modal-content" id="img01">
+</div>
