@@ -17,7 +17,7 @@
   // filter: blur(5px);
 }
 
-.modal {
+.mymodal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 99; /* Sit on top */
@@ -31,7 +31,7 @@
   background-color: rgba(0, 0, 0, 0.575); /* Black w/ opacity */
 }
 
-.modal-content {
+.mymodal-content {
   margin: auto;
   display: block;
   width: 60%;
@@ -98,4 +98,8 @@
   .modal-content {
       width: 100%;
   }
+}
+
+.pinch-zoom {
+  touch-action: manipulation;
 }
