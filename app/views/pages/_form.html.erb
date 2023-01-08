@@ -1,6 +1,18 @@
 <div class="date-form">
   <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
-    <%= f.input :date, as: :date, label: false, include_date: [:day, :month, :year], start_year: 1800, order: [:day, :month, :year] %>
+    <%= f.text_field :date, placeholder: "Year e.g. 1925" %>
     <%= f.button :submit, "Submit guess" %>
   <% end %>
 </div>
+
+<%
+=begin%>
+
+<div class="date-form">
+  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
+    <%= f.input :date, as: :date, label: false, include_date: [:year], start_year: 1800, order: [:year] %>
+    <%= f.button :submit, "Submit guess" %>
+  <% end %>
+</div>
+<%
+=end%>
