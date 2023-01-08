@@ -3,7 +3,8 @@ class UserGuessController < ApplicationController
   end
 
   def create
-    @user_guess = UserGuess.new(guess_params)
+    date = Date.parse("#{guess_params[:date]}-01-01")
+    @user_guess = UserGuess.new(date: date)
     respond_to do |format|
       if @user_guess.save
         format.html { redirect_to root_path }
