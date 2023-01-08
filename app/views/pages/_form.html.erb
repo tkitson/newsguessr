@@ -1,9 +1,11 @@
-<div class="date-form">
+
   <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
+  <div class="date-form">
     <%= f.text_field :date, placeholder: "Year e.g. 1925" %>
     <%= f.button :submit, "Submit guess" %>
+    </div>
   <% end %>
-</div>
+
 
 <%
 =begin%>
