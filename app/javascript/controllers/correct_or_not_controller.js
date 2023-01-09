@@ -39,7 +39,9 @@ export default class extends Controller {
     if (this.x <= PageElement.length) {
       let target = PageElement[this.x + 1];
     target.classList.remove("img-hidden");
-    PageElement[this.x].classList.add("img-hidden")
+    target.classList.add("img-zoom");
+    PageElement[this.x].classList.add("img-hidden");
+    PageElement[this.x].classList.remove("img-zoom");
     this.x++;
     }
   }

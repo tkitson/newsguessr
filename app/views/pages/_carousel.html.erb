@@ -1,42 +1,15 @@
- <section class="gallery">
-    <div class="one">
-      <%= image_tag asset_path("1.jpg"), class: "front-page-img pages", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-    <div class="two">
-      <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
+<div class="centered-gallery">
+  <div class="gallery">
 
-    <div class="three">
-      <%= image_tag asset_path("3.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
 
-    <div class="four">
-      <%= image_tag asset_path("4.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
 
-    <div class="five">
-      <%= image_tag asset_path("5.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-
-    <div class="six">
-      <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden", id: "myImg" %>
-    </div>
-
-    <div id="myModal" class="mymodal pinch-zoom">
-        <img class="mymodal-content" id="img01">
-    </div>
-</section>
-
+    <a href="<%= asset_path("1.jpg") %>" data-lightbox="image-1" data-title="My caption">
+    <%= image_tag asset_path("1.jpg"), class: "front-page-img pages", id: "myImg", data: { 'pinch-zoom': true } %>
+    </a>
 
  <%
 =begin%>
- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-interval="false">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag asset_path("1.jpg"), class: "front-page-img", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-
-    <div class="carousel-item">
+ <div class="carousel-item">
       <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
     </div>
 
@@ -55,21 +28,8 @@
     <div class="carousel-item">
       <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden", id: "myImg" %>
     </div>
-
-
-  <div data-correct-or-not-target="buttons" class="img-hidden">
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" data-correct-or-not-target="next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-    <div id="myModal" class="mymodal pinch-zoom">
-        <img class="mymodal-content" id="img01">
-    </div>
 <%
 =end%>
+
+  </div>
+</div>
