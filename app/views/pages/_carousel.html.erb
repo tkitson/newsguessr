@@ -1,4 +1,35 @@
+ <section class="gallery">
+    <div class="one">
+      <%= image_tag asset_path("1.jpg"), class: "front-page-img pages", id: "myImg", data: { 'pinch-zoom': true } %>
+    </div>
+    <div class="two">
+      <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
+    </div>
 
+    <div class="three">
+      <%= image_tag asset_path("3.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
+    </div>
+
+    <div class="four">
+      <%= image_tag asset_path("4.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
+    </div>
+
+    <div class="five">
+      <%= image_tag asset_path("5.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
+    </div>
+
+    <div class="six">
+      <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden", id: "myImg" %>
+    </div>
+
+    <div id="myModal" class="mymodal pinch-zoom">
+        <img class="mymodal-content" id="img01">
+    </div>
+</section>
+
+
+ <%
+=begin%>
  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -40,3 +71,5 @@
     <div id="myModal" class="mymodal pinch-zoom">
         <img class="mymodal-content" id="img01">
     </div>
+<%
+=end%>

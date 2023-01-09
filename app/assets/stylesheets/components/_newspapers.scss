@@ -1,20 +1,6 @@
-// .front-page-img {
-//   display: flex;
-//   margin: 0 auto;
-//   width: 20%;
-//   transition: all 0.2s ease;
-//   cursor: pointer;
-//   max-height: 100%;
-// }
-
-// .large-image {
-//   // width: 100%;
-//   transition: scale(5);
-// }
 
 .img-hidden {
   visibility: hidden;
-  // filter: blur(5px);
 }
 
 .mymodal {
@@ -43,17 +29,63 @@
 }
 
 
+.gallery {
+  max-width: 300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+// .centered-gallery {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .front-page-img {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+  max-width: 100%;
 }
 
+.one {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 7;
+}
+
+.two {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 6;
+}
+.three {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 5;
+}
+.four {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 4;
+}
+.five {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 3;
+}
+.six {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 2;
+}
 
 @media(max-width: 992px) {
   .front-page-img {
