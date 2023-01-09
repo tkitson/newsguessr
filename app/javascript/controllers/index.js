@@ -9,6 +9,3 @@ application.register("correct-or-not", CorrectOrNotController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import ImgZoomController from "./img_zoom_controller"
-application.register("img-zoom", ImgZoomController)

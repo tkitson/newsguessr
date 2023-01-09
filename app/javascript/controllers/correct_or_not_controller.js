@@ -2,10 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
-  static targets = ["answer", "form", "buttons", "next"]
+  static targets = ["answer", "form"]
   i = 0;
   x = 0;
   connect() {
+
   }
 
 
@@ -18,14 +19,15 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data)
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
         this.nextBox(this.answerTarget.innerHTML)
       } else {
         this.answerTarget.innerHTML = "Incorrect!";
-        this.buttonsTarget.classList.remove("img-hidden");
+        // this.buttonsTarget.classList.remove("img-hidden");
         this.nextPage()
-        this.nextTarget.click()
+        // this.nextTarget.click()
         this.nextBox(this.answerTarget.innerHTML)
       }
     })
@@ -35,8 +37,11 @@ export default class extends Controller {
       const PageElement = this.element
     .getElementsByClassName('pages')
     if (this.x <= PageElement.length) {
-      let target = PageElement[this.x];
+      let target = PageElement[this.x + 1];
     target.classList.remove("img-hidden");
+    target.classList.add("img-zoom");
+    PageElement[this.x].classList.add("img-hidden");
+    PageElement[this.x].classList.remove("img-zoom");
     this.x++;
     }
   }
