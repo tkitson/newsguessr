@@ -73,7 +73,7 @@ body.lb-disable-scrolling {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url((<%= link_to image_tag(image_path("gif.png")), '/app/assets/images' %>)) no-repeat;
+  /* background: url((<%= link_to image_tag(image_path("gif.png")), '/app/assets/images' %>)) no-repeat; */
 }
 
 .lb-nav {
@@ -104,7 +104,7 @@ body.lb-disable-scrolling {
   width: 34%;
   left: 0;
   float: left;
-  background: url((<%= link_to image_tag(image_path("prev.png")), '/app/assets/images' %>)) left 48% no-repeat;
+  /* background: url((<%= link_to image_tag(image_path("prev.png")), '/app/assets/images' %>)) left 48% no-repeat; */
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -122,7 +122,7 @@ body.lb-disable-scrolling {
   width: 64%;
   right: 0;
   float: right;
-  background: url(<%= link_to image_tag(image_path("next.png")), '/app/assets/images' %>)) right 48% no-repeat;
+  /* background: url(<%= link_to image_tag(image_path("next.png")), '/app/assets/images' %>)) right 48% no-repeat; */
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -186,7 +186,7 @@ body.lb-disable-scrolling {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(<%= link_to image_tag(image_path("close.png")), '/app/assets/images' %>) top right no-repeat;
+  /* background: url(<%= link_to image_tag(image_path("close.png")), '/app/assets/images' %>) top right no-repeat; */
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
