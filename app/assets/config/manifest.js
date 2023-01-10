@@ -4,3 +4,4 @@
 //= link zoom.js
 //= link pinch-zoom.js
 //= link lightbox-plus-jquery.js
+//= link glide.js
