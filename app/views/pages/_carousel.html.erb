@@ -1,35 +1,51 @@
 <div class="centered-gallery">
   <div class="gallery">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
 
+          <ul class="glide__slides">
 
+            <li class="glide__slide">
+              <a href="<%= asset_path("1.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("1.jpg"), class: "front-page-img pages", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
 
-    <a href="<%= asset_path("1.jpg") %>" data-lightbox="image-1" data-title="My caption">
-    <%= image_tag asset_path("1.jpg"), class: "front-page-img pages", id: "myImg", data: { 'pinch-zoom': true } %>
-    </a>
+            <li class="glide__slide">
+              <a href="<%= asset_path("2.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
 
- <%
-=begin%>
- <div class="carousel-item">
-      <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
+            <li class="glide__slide">
+              <a href="<%= asset_path("3.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("3.jpg"), class: "front-page-img pages img-hidden", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
+
+            <li class="glide__slide">
+              <a href="<%= asset_path("4.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("4.jpg"), class: "front-page-img pages img-hidden", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
+
+            <li class="glide__slide">
+              <a href="<%= asset_path("5.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("5.jpg"), class: "front-page-img pages img-hidden", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
+
+            <li class="glide__slide">
+              <a href="<%= asset_path("6.jpg") %>" data-lightbox="newspaper">
+                <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden", data: { 'pinch-zoom': true } %>
+              </a>
+            </li>
+          </ul>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">>">next</button>
+      </div>
+        </div>
     </div>
-
-    <div class="carousel-item">
-      <%= image_tag asset_path("3.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-
-    <div class="carousel-item">
-      <%= image_tag asset_path("4.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-
-    <div class="carousel-item">
-      <%= image_tag asset_path("5.jpg"), class: "front-page-img pages img-hidden", id: "myImg", data: { 'pinch-zoom': true } %>
-    </div>
-
-    <div class="carousel-item">
-      <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden", id: "myImg" %>
-    </div>
-<%
-=end%>
-
   </div>
 </div>
