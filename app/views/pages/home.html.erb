@@ -6,13 +6,16 @@
   </div>
 
   <div data-controller="correct-or-not" class="centered-gallery">
-    <div>
-      <%= render "carousel" %>
-    </div>
+
+      <div>
+        <%= render "carousel" %>
+      </div>
+
       <div class="answer-container">
         <h3 class="answer" data-correct-or-not-target="answer">
         </h3>
       </div>
+
       <div class="squares-container">
         <div class="square"></div>
         <div class="square"></div>
@@ -21,8 +24,10 @@
         <div class="square"></div>
         <div class="square"></div>
       </div>
+
       <div class="form-container">
         <%= render "form", user_guess: @user_guess %>
       </div>
+
   </div>
 </div>

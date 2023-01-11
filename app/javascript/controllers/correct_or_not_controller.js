@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="correct-or-not"
 export default class extends Controller {
-  static targets = ["answer", "form"]
+  static targets = ["answer", "form", "buttons", "next"]
   i = 0;
-  x = 0;
+  x = 1;
   connect() {
 
   }
@@ -19,16 +19,15 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
         this.nextBox(this.answerTarget.innerHTML)
       } else {
         this.answerTarget.innerHTML = "Incorrect!";
-        // this.buttonsTarget.classList.remove("img-hidden");
-        this.nextPage()
-        // this.nextTarget.click()
+        this.buttonsTarget.classList.remove("img-hidden");
+        this.nextTarget.click()
         this.nextBox(this.answerTarget.innerHTML)
+        this.nextPage()
       }
     })
   }
@@ -37,20 +36,18 @@ export default class extends Controller {
       const PageElement = this.element
     .getElementsByClassName('pages')
     if (this.x <= PageElement.length) {
-      let target = PageElement[this.x + 1];
+      let target = PageElement[this.x];
     target.classList.remove("img-hidden");
-    target.classList.add("img-zoom");
-    PageElement[this.x].classList.add("img-hidden");
-    PageElement[this.x].classList.remove("img-zoom");
     this.x++;
     }
   }
 
     nextBox(answer) {
-      const PageElement = this.element
+      const SquareElement = this.element
     .getElementsByClassName('square')
-    console.log(PageElement)
-      let target = PageElement[this.i];
+    console.log(this.i)
+    console.log(SquareElement)
+      let target = SquareElement[this.i];
       if (answer === "Incorrect!") {
     target.classList.add("red-square");
   } else if (answer === "Correct!") {
