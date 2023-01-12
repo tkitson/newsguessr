@@ -35,9 +35,13 @@ export default class extends Controller {
     nextPage() {
       const PageElement = this.element
     .getElementsByClassName('pages')
+    const tagElement = this.element
+    .getElementsByClassName('img-a-tag')
     if (this.x <= PageElement.length) {
       let target = PageElement[this.x];
     target.classList.remove("img-hidden");
+    let atag = tagElement[this.x];
+    atag.setAttribute("data-lightbox", "newspaper")
     this.x++;
     }
   }
