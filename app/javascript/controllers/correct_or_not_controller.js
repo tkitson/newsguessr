@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ["answer", "form", "buttons", "next"]
   i = 0;
   x = 1;
+  y = 0;
   connect() {
 
   }
@@ -19,18 +20,24 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
+      this.y++;
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
         this.nextBox(this.answerTarget.innerHTML)
       } else {
-        this.answerTarget.innerHTML = "Incorrect!";
+        this.answerTarget.innerHTML = `Incorrect - ${data.result}`;
+        if (this.y === 6) {
+          this.answerTarget.innerHTML += ` ${data.year}`;
+        }
         this.buttonsTarget.classList.remove("img-hidden");
         this.nextTarget.click()
-        this.nextBox(this.answerTarget.innerHTML)
+        this.nextBox("Incorrect!")
         this.nextPage()
+        console.log(this.y)
       }
     })
   }
+
 
     nextPage() {
       const PageElement = this.element
@@ -49,8 +56,6 @@ export default class extends Controller {
     nextBox(answer) {
       const SquareElement = this.element
     .getElementsByClassName('square')
-    console.log(this.i)
-    console.log(SquareElement)
       let target = SquareElement[this.i];
       if (answer === "Incorrect!") {
     target.classList.add("red-square");
