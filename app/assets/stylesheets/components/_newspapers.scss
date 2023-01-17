@@ -1,5 +1,6 @@
 .img-hidden {
-  visibility: hidden;
+  // visibility: hidden;
+  display: none;
 }
 
 .img-box {
@@ -28,7 +29,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 @media(max-width: 992px) {
@@ -39,6 +40,14 @@
   .front-page-img {
     width: 40%;
   }
+
+  .glide__arrow--left {
+    margin-left: -5vw !important;
+  }
+
+  .glide__arrow--right {
+    margin-right: -5vw !important;
+  }
 }
 
 @media(max-width: 768px) {
@@ -48,6 +57,15 @@
   }
 
   .front-page-img {
-    width: 50%;
+    width: 35%;
   }
+
+  .glide__arrow--left {
+    margin-left: -5vw !important;
+  }
+
+  .glide__arrow--right {
+    margin-right: -5vw !important;
+  }
+
 }

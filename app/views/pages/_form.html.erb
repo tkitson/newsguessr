@@ -2,19 +2,7 @@
   <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
   <div class="date-form">
     <%= f.text_field :date, placeholder: "Year e.g. 1925" %>
-    <%= f.button :submit, "Submit guess" %>
+    <%= f.button :submit, "Submit guess", data: { correct_or_not_target: "submitbtn" } %>
+  <% end %>
+  <button type="button" data-action="correct-or-not#copy" data-correct-or-not-target="scorebtn" class="copy-score-btn btn-hidden">Share Score</button>
     </div>
-  <% end %>
-
-
-<%
-=begin%>
-
-<div class="date-form">
-  <%= simple_form_for @user_guess, url: user_guess_index_path, method: :post, data: {correct_or_not_target: "form", action: "submit->correct-or-not#send"} do |f| %>
-    <%= f.input :date, as: :date, label: false, include_date: [:year], start_year: 1800, order: [:year] %>
-    <%= f.button :submit, "Submit guess" %>
-  <% end %>
-</div>
-<%
-=end%>
