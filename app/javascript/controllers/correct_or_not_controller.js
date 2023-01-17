@@ -6,11 +6,10 @@ export default class extends Controller {
   i = 0;
   x = 1;
   y = 0;
-
+  incorrect = 0;
 
 
   connect() {
-    console.log(this.scorebtnTarget)
   }
 
 
@@ -24,33 +23,42 @@ export default class extends Controller {
     .then((response) => response.json())
     .then((data) => {
       this.y++;
+      console.log(this.y)
+      console.log(this.incorrect)
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
         this.nextBox(this.answerTarget.innerHTML)
         this.submitbtnTarget.classList.add("btn-hidden")
         this.scorebtnTarget.classList.remove("btn-hidden")
       } else {
+        this.incorrect++;
         this.answerTarget.innerHTML = `Incorrect - ${data.result}`;
         if (this.y === 6) {
           this.answerTarget.innerHTML += ` ${data.year}`;
+          this.submitbtnTarget.classList.add("btn-hidden");
+          this.scorebtnTarget.classList.remove("btn-hidden");
         }
         this.buttonsTarget.classList.remove("img-hidden");
         this.nextTarget.click()
         this.nextBox("Incorrect!")
         this.nextPage()
-        console.log(this.y)
       }
     })
   }
+
+  greenBox() {
+    return (this.y === 6) ? "" : "🟩";
+}
 
     copy() {
       const date = new Date();
       let day = date.getDate();
       let month = date.getMonth() + 1;
       let year = date.getFullYear();
-      let redbox = "🟥".repeat((this.i - 1))
+      let redbox = "🟥".repeat(this.incorrect)
+      let blackbox = "⬛".repeat((6 - this.y))
       let currentDate = `${day}/${month}/${year}`;
-      navigator.clipboard.writeText(`NewsGuesser ${currentDate}\n📰 ${redbox} 🟩`);
+      navigator.clipboard.writeText(`📰 NewsGuesser ${currentDate}\n${redbox}${this.greenBox()}${blackbox}`);
       this.scorebtnTarget.innerHTML = "Copied!"
     }
 
