@@ -4,7 +4,7 @@
         <div class="glide__track" data-glide-el="track">
 
           <ul class="glide__slides">
-            <% @new_images.each_with_index do |img, index| %>
+            <% @todays_paper.each_with_index do |img, index| %>
               <li class="glide__slide">
                   <div class="img-box">
                       <a class="img-a-tag" href="<%= asset_path(img) %>" data-lightbox="newspaper">

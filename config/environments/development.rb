@@ -58,7 +58,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-
+  config.action_controller.perform_caching = true
 
   config.action_view.preload_links_header = false
   # Raises error for missing translations.
