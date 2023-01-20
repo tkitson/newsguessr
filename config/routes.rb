@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :user_guess, only: [:create, :new]
   resources :pages
 
+  require "sidekiq/web"
+  # authenticate :user, ->(user) { user.admin? } do
+  mount Sidekiq::Web => '/sidekiq'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

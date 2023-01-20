@@ -4,52 +4,17 @@
         <div class="glide__track" data-glide-el="track">
 
           <ul class="glide__slides">
-
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("1.jpg") %>" data-lightbox="newspaper">
-                  <%= image_tag asset_path("1.jpg"), class: "front-page-img pages" %>
-                </a>
-              </div>
-            </li>
-
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("2.jpg") %>">
-                  <%= image_tag asset_path("2.jpg"), class: "front-page-img pages img-hidden" %>
-                </a>
-              </div>
-            </li>
-
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("3.jpg") %>">
-                  <%= image_tag asset_path("3.jpg"), class: "front-page-img pages img-hidden" %>
-                </a>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("4.jpg") %>">
-                  <%= image_tag asset_path("4.jpg"), class: "front-page-img pages img-hidden" %>
-                </a>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("5.jpg") %>">
-                  <%= image_tag asset_path("5.jpg"), class: "front-page-img pages img-hidden" %>
-                </a>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="img-box">
-                <a class="img-a-tag" href="<%= asset_path("6.jpg") %>">
-                  <%= image_tag asset_path("6.jpg"), class: "front-page-img pages img-hidden" %>
-                </a>
-              </div>
-            </li>
+            <% @new_images.each_with_index do |img, index| %>
+              <li class="glide__slide">
+                  <div class="img-box">
+                      <a class="img-a-tag" href="<%= asset_path(img) %>" data-lightbox="newspaper">
+                          <%= image_tag asset_path(img), class: "front-page-img pages #{'img-hidden' if index != 0}" %>
+                      </a>
+                  </div>
+              </li>
+          <% end %>
           </ul>
+      </div>
       <div class="glide__arrows buttons img-hidden" data-glide-el="controls" data-correct-or-not-target="buttons">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">" data-correct-or-not-target="next">next</button>
