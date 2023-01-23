@@ -10,6 +10,13 @@ export default class extends Controller {
 
 
   connect() {
+    console.log("hello")
+    console.log(this.formTarget)
+    console.log(this.buttonsTarget)
+    console.log(this.nextTarget)
+    console.log(this.answerTarget)
+    console.log(this.submitbtnTarget)
+    console.log(this.scorebtnTarget)
   }
 
 

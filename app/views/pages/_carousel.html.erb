@@ -1,25 +1,26 @@
 <div class="centered-gallery">
   <div class="gallery">
       <div class="glide">
-        <div class="glide__track" data-glide-el="track">
 
+        <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <% @todays_paper.each_with_index do |img, index| %>
+            <% @todays_paper.photos.each_with_index do |img, index| %>
               <li class="glide__slide">
                   <div class="img-box">
-                      <a class="img-a-tag" href="<%= asset_path(img) %>" data-lightbox="newspaper">
-                          <%= image_tag asset_path(img), class: "front-page-img pages #{'img-hidden' if index != 0}" %>
+                      <a class="img-a-tag" href="<%= url_for(img.blob) %>" data-lightbox="newspaper">
+                          <%= image_tag url_for(img.blob), class: "front-page-img pages #{'img-hidden' if index != 0}" %>
                       </a>
                   </div>
               </li>
-          <% end %>
+              <% end %>
           </ul>
-      </div>
-      <div class="glide__arrows buttons img-hidden" data-glide-el="controls" data-correct-or-not-target="buttons">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">" data-correct-or-not-target="next">next</button>
-      </div>
         </div>
-    </div>
+
+          <div class="glide__arrows buttons img-hidden" data-glide-el="controls" data-correct-or-not-target="buttons">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" data-correct-or-not-target="next">next</button>
+          </div>
+
+      </div>
   </div>
 </div>
