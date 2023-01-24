@@ -56,7 +56,8 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :redis_cache_store, { url: "redis://default:b669310ea6444d0282397b0b266a47c0@fly-dawn-hill-4368.upstash.io", expires_in: 90.minutes }
+
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
