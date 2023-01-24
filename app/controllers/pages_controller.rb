@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def refresh_images
-    id = Rails.cache.fetch('new_images', expires_in: 45.seconds) do
+    id = Rails.cache.fetch('new_images', expires_in: 8.hours) do
       Newspaper.new_images
     end
     Newspaper.where(id: id).first

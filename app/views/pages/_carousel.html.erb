@@ -7,20 +7,20 @@
             <% @todays_paper.photos.each_with_index do |img, index| %>
               <li class="glide__slide">
                   <div class="img-box">
-                      <a class="img-a-tag" href="<%= url_for(img.blob) %>" data-lightbox="newspaper">
+                      <a class="img-a-tag" href="<%= url_for(img.blob) %>" data-lightbox=<%= "#{'newspaper' if index == 0}"%>>
                           <%= image_tag url_for(img.blob), class: "front-page-img pages #{'img-hidden' if index != 0}" %>
                       </a>
                   </div>
               </li>
               <% end %>
           </ul>
-        </div>
 
           <div class="glide__arrows buttons img-hidden" data-glide-el="controls" data-correct-or-not-target="buttons">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
             <button class="glide__arrow glide__arrow--right" data-glide-dir=">" data-correct-or-not-target="next">next</button>
           </div>
 
+        </div>
       </div>
   </div>
 </div>
