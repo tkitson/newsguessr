@@ -10,13 +10,6 @@ export default class extends Controller {
 
 
   connect() {
-    console.log("hello")
-    console.log(this.formTarget)
-    console.log(this.buttonsTarget)
-    console.log(this.nextTarget)
-    console.log(this.answerTarget)
-    console.log(this.submitbtnTarget)
-    console.log(this.scorebtnTarget)
   }
 
 
@@ -29,9 +22,8 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then((data) => {
+      console.log(typeof data)
       this.y++;
-      console.log(this.y)
-      console.log(this.incorrect)
       if (data.result === "correct") {
         this.answerTarget.innerHTML = "Correct!"
         this.nextBox(this.answerTarget.innerHTML)

@@ -7,6 +7,6 @@ class Newspaper < ApplicationRecord
     @todays_paper = filtered_newspapers.first
     @todays_paper.done = true
     @todays_paper.save
-    return @todays_paper.id
+    @todays_paper.id
   end
 end
