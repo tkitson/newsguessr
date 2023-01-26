@@ -39,6 +39,9 @@ gem 'redis-rails'
 gem 'hiredis'
 
 # gem 'connection_pool'
+
+gem 'whenever', require: false
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

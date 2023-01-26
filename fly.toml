@@ -19,6 +19,9 @@ processes = []
 [env]
   PORT = "8080"
 
+[mounts]
+  source="newsguesser_data"
+  destination="/data"
 
 [experimental]
   allowed_public_ports = []
