@@ -53,10 +53,11 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
-  config.cache_store = :redis_cache_store, { url: "redis://default:4b1a70ad91d6490b8e7dc6280c9478f1@fly-white-waterfall-6812.upstash.io", expires_in: 90.minutes }
+
+  config.cache_store = :redis_cache_store, { expires_in: 90.minutes }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
