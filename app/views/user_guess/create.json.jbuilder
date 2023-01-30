@@ -1,4 +1,4 @@
-@todays_paper = Newspaper.find(Rails.cache.read("new_images"))
+@todays_paper = Newspaper.find_by(live: true)
 
 if @user_guess.persisted?
   json.year @todays_paper.date.year

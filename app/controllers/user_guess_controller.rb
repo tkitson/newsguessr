@@ -3,7 +3,7 @@ class UserGuessController < ApplicationController
   end
 
   def create
-    @todays_paper = Newspaper.find(Rails.cache.read('new_images'))
+    @todays_paper = Newspaper.find_by(live: true)
     date = Date.parse("#{guess_params[:date]}-01-01")
     @user_guess = UserGuess.new(date: date)
     respond_to do |format|
@@ -16,6 +16,21 @@ class UserGuessController < ApplicationController
       end
     end
   end
+
+  # def create
+  #   @todays_paper = Newspaper.find(Rails.cache.read('new_images'))
+  #   date = Date.parse("#{guess_params[:date]}-01-01")
+  #   @user_guess = UserGuess.new(date: date)
+  #   respond_to do |format|
+  #     if @user_guess.save
+  #       format.html { redirect_to root_path }
+  #       format.json { render :create, status: :created }
+  #     else
+  #       format.html { render :new }
+  #       format.json
+  #     end
+  #   end
+  # end
 
   private
 

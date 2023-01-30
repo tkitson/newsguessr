@@ -5,7 +5,22 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+
+# ENV.each_key do |key|
+#   env key.to_sym, ENV[key]
+# end
+
+
+
+# ENV.each { |k, v| env(k, v) }
+
+# set :output, "log/cron.log"
+
+# set :environment, ENV["RAILS_ENV"]
+
+
+# set :environment, :production
+
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -19,6 +34,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '00:00 am' do
-  rake "newspaper:new_images"
-end
+# every 1.minute do
+#   rake "newspaper:new_images"
+# end
