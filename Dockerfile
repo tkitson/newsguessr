@@ -143,6 +143,5 @@ RUN ${BUILD_COMMAND}
 ENV PORT 8080
 ARG SERVER_COMMAND="bin/rails fly:server"
 ENV SERVER_COMMAND ${SERVER_COMMAND}
-# RUN bash -c "bundle exec whenever --update-crontab"
 CMD ${SERVER_COMMAND}
 EXPOSE 8080

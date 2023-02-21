@@ -1,0 +1,26 @@
+# test/fixtures/newspapers.yml
+
+newspaper_1:
+  date: 2022-02-10
+  done: true
+  live: true
+
+newspaper_2:
+  date: 2022-02-11
+  done: true
+  live: false
+
+newspaper_3:
+  date: 2022-02-12
+  done: false
+  live: false
+
+newspaper_4:
+  date: 2022-02-13
+  done: false
+  live: false
+
+newspaper_5:
+  date: 2022-02-14
+  done: false
+  live: false

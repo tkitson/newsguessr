@@ -1,1 +1,1 @@
-*/1 * * * * /bin/bash -l -c 'cd /app && RAILS_ENV=production bundle exec rake newspaper:new_images --silent'
+0 0 * * * /bin/bash -l -c 'cd /app && /usr/local/bundle/bin/bundle exec rake newspaper:new_images --silent'
