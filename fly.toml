@@ -3,7 +3,7 @@
 app = "newsguessr"
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
+
 
 [build]
   [build.args]
@@ -20,6 +20,7 @@ processes = []
   PORT = "8080"
 
 [mounts]
+  processes = ["web"]
   source="newsguesser_data"
   destination="/data"
 
@@ -30,7 +31,7 @@ processes = []
 [[services]]
   http_checks = []
   internal_port = 8080
-  processes = ["app"]
+  processes = ["web"]
   protocol = "tcp"
   script_checks = []
   [services.concurrency]
@@ -56,3 +57,9 @@ processes = []
 [[statics]]
   guest_path = "/app/public"
   url_prefix = "/"
+
+[processes]
+  # The command below is used to launch a Rails server; be sure to
+  # replace with the command you're using to launch your server.
+  web = "bin/rails fly:server"
+  cron = "supercronic /app/crontab"

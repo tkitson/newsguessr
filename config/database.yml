@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: newsguessr_development
+  user: thomaskitson
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -73,14 +74,20 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  # production:
+  #   url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
-# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# Read ht~tps://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
-  database: newsguessr_production
-  username: rails_authentication
-  password: <%= ENV["RAILS_AUTHENTICATION_DATABASE_PASSWORD"] %>
+  database: newsguessr_development
+  username: thomaskitson
+  # password: <%= ENV["RAILS_AUTHENTICATION_DATABASE_PASSWORD"] %>
+  # hostname: delicate-glade-464.internal
+  # url: postgres://postgres:O3l1twkEf9Z20lD@delicate-glade-464.internal:5432
+  # port: 5433
+  # database: postgres
+  # password: O3l1twkEf9Z20lD
+  # username: postgres

@@ -1,0 +1,1 @@
+0 0 * * * /bin/bash -l -c 'cd /app && /usr/local/bundle/bin/bundle exec rake newspaper:new_images --silent'
