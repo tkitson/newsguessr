@@ -19,6 +19,8 @@ gem "byebug"
 
 gem "faker"
 
+gem 'pry', '~> 0.13.1'
+
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 

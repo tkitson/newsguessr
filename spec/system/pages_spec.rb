@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe "Home page", type: :system do
 
@@ -14,10 +15,24 @@ RSpec.describe "Home page", type: :system do
     end
   end
 
-  it "Tells the user when the answer is incorrect" do
+  it "Tells the user when the answer is incorrect and too early" do
+    visit root_path
+    fill_in 'user_guess[date]', with: '1866'
+    click_button 'commit'
+    expect(page).to have_content("Incorrect - too early!")
+  end
+
+  it "Tells the user when the answer is incorrect and too late" do
     visit root_path
     fill_in 'user_guess[date]', with: '1966'
     click_button 'commit'
-    expect(page).to have_content("Incorrect")
+    expect(page).to have_content("Incorrect - too late!")
+  end
+
+  it "Tells the user when the answer is correct" do
+    visit root_path
+    fill_in 'user_guess[date]', with: '1912'
+    click_button 'commit'
+    expect(page).to have_content("Correct")
   end
 end
