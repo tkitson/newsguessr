@@ -20,3 +20,5 @@ folders.each do |folder|
   end
   newspaper.save
 end
+
+Newspaper.first.update(live: true)
